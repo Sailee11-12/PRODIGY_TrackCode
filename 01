@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Interactive Navigation Menu</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background-color: #f4f4f4;
+      min-height: 200vh;
+    }
+    nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      transition: 0.4s ease;
+      z-index: 1000;
+    }
+    nav.active{
+      background-color: #1e3a8a;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 14px 50px;
+    }
+
+ 
+    .logo{
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    
+    .menu{
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .menu li a{
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+ 
+    .menu li a:hover{
+      background-color: white;
+      color: #1e3a8a;
+      transform: translateY(-2px);
+    }
+
+   
+
+    .hero{
+      height: 100vh;
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content h1{
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p{
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .content{
+      padding: 80px 60px;
+    }
+
+    .content h2{
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    .content p{
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    @media(max-width: 768px){
+
+      nav{
+        padding: 15px 20px;
+        flex-direction: column;
+      }
+
+      .menu{
+        margin-top: 10px;
+        gap: 12px;
+      }
+
+      .hero-content h1{
+        font-size: 36px;
+      }
+
+      .hero-content p{
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+
+    <div class="logo">MyWebo</div>
+
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Interactive Navigation Menu</h1>
+
+      <p>
+        This navigation menu changes style when scrolling and
+        provides hover effects for better user interaction using
+        HTML, CSS, and JavaScript.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="content">
+
+    <h2>About This Project</h2>
+
+    <p>
+      The project demonstrates how to create a fixed navigation
+      menu that remains visible on all pages. JavaScript is used
+      to detect scrolling and dynamically change the navigation
+      bar style. CSS hover effects improve user experience and
+      make the interface more interactive.
+    </p>
+
+  </section>
+
+  <script>
+
+    // Select Navbar
+    const navbar = document.getElementById("navbar");
+
+    // Scroll Event
+    window.addEventListener("scroll", () => {
+
+      if(window.scrollY > 50){
+        navbar.classList.add("active");
+      }
+      else{
+        navbar.classList.remove("active");
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
